@@ -31,8 +31,25 @@ def crear_componentes_tab2(tabulador):
 
 def crear_componentes_tab3(tabulador):
     # Creamos una lista usando data list comprehensions
-    datos = [x+1 for x in range(10)]
+    datos = [x+1 for x in range(100,110)]
+    combobox = ttk.Combobox(tabulador, width=15, values=datos)
+    combobox.grid(row=0,column=0, padx=10, pady=10)
 
+    # Seleccionamos un elemento por default a mostrar
+    combobox.current(0)
+
+    # Agregamos un botón para saber que opción seleccionó el usuario
+    def mostrar_valor():
+        messagebox.showinfo('Valor seleccionado', f'Valor seleccionado: {combobox.get()}')
+    boton1 = ttk.Button(tabulador, text='Mostrar valor seleccionado', command=mostrar_valor)
+    boton1.grid(row=0, column=1)
+
+def crear_componentes_tab4(tabulador):
+    imagen = tk.PhotoImage(file='python-logo.png')
+    def mostrar_titulo():
+        messagebox.showinfo('Más info imagen', f'Nombre imagen: {imagen.cget("file")}')
+    boton_imagen = ttk.Button(tabulador, image=imagen, command=mostrar_titulo)
+    boton_imagen.grid(row=0,column=0, padx=5)
 
 def crear_tabs():
     # Creamos un tab control, para ello usamos la clase Notebook
@@ -61,6 +78,12 @@ def crear_tabs():
     control_tabulador.add(tabulador3, text='Tabulador 3')
 
     crear_componentes_tab3(tabulador3)
+
+    # Tabulador 4
+    tabulador4 = ttk.LabelFrame(control_tabulador, text='Imagen')
+    control_tabulador.add(tabulador4, text='Tabulador 4')
+
+    crear_componentes_tab4(tabulador4)
 
 crear_tabs()
 
