@@ -13,8 +13,6 @@ class ComponentesVentana(tk.Tk):
 
         self._crear_tabs()
 
-        self.mainloop()
-
     def _crear_componentes_tab1(self, tabulador):
         # Agregar una etiqueta
         etiqueta1 = ttk.Label(tabulador, text='Nombre:')
@@ -142,3 +140,8 @@ class ComponentesVentana(tk.Tk):
         control_tabulador.add(tabulador5, text='Barra Progreso')
 
         self._crear_componentes_tab5(tabulador5)
+
+if __name__ == '__main__':
+    # Creamos un objeto de nuestra nueva clase de Componentes:
+    componentes_ventana = ComponentesVentana()
+    componentes_ventana.mainloop()
