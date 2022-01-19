@@ -275,7 +275,7 @@ class Calculadora(tk.Tk):
                   bd=0,
                   bg='#E8E8E8',
                   cursor='hand2',
-                  command=lambda: self._evento_evaluar) \
+                  command=self._evento_evaluar) \
             .grid(row=4,
                   column=3,
                   padx=1,
@@ -296,6 +296,7 @@ class Calculadora(tk.Tk):
         print(resultado)
         self.entrada_texto.set(resultado)
         self.expresion = ''
+
 
 if __name__ == '__main__':
     calculadora = Calculadora()
