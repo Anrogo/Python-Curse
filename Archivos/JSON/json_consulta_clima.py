@@ -2,7 +2,7 @@ import json
 import urllib.request
 from urllib.request import Request, urlopen
 
-URL = Request('https://globalmentoring.com.mx/api/clima.json')
+URL = Request('https://www.globalmentoring.com.mx/api/clima.json')
 
 URL.add_header('User-Agent', 'Firefox/78.0')
 

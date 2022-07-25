@@ -3,15 +3,16 @@
 
 import json
 from urllib.request import Request, urlopen
+import urllib.request
 
 # URL de consulta con el JSON
 
-URL = Request('https://globalmentoring.com.mx/api/personas.json')
+URL = Request('https://www.globalmentoring.com.mx/api/personas.json')
 
 # Se agrega un header de lectura a la petición de la url
 
-# URL.add_header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0) Gecko/20100101 Firefox/78.0')
-URL.add_header('User-Agent', 'Firefox/78.0')
+URL.add_header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0) Gecko/20100101 Firefox/78.0')
+# URL.add_header('User-Agent', 'Firefox/78.0')
 
 # Se hace dicha conexión, mediante urlopen ya con el header añadido. Y se obtiene una respuesta
 
