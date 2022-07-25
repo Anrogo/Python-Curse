@@ -6,7 +6,7 @@ class Calculadora(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.geometry('320x330')
+        self.geometry('320x330+120+600')
         self.resizable(0, 0)
         self.title('Calculadora')
         self.iconbitmap('../calculadora.ico')
@@ -286,16 +286,22 @@ class Calculadora(tk.Tk):
         self.entrada_texto.set(self.expresion)
 
     def _evento_click(self, elemento):
-        print(elemento)
         self.expresion = f'{self.expresion}{elemento}'
         self.entrada_texto.set(self.expresion)
 
     def _evento_evaluar(self):
         # eval evalúa la expresión str como una expresión aritmética
-        resultado = str(eval(self.expresion))
-        print(resultado)
-        self.entrada_texto.set(resultado)
-        self.expresion = ''
+        try:
+            if self.expresion:
+                resultado = str(eval(self.expresion))
+                self.entrada_texto.set(resultado)
+        except Exception as e:
+            messagebox.showerror('Error', f'Ocurrió un error: {e}')
+            self.entrada_texto.set('')
+        if self.entrada_texto:
+            self.expresion = self.entrada_texto.get()
+        else:
+            self.expresion = ''
 
 
 if __name__ == '__main__':

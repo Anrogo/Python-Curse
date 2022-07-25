@@ -7,7 +7,7 @@ class ComponentesVentana(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.geometry('650x400+650+200')
+        self.geometry('650x400+650-200')
         self.title('Componentes')
         self.iconbitmap('icono.ico')
 
