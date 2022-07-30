@@ -2,11 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from personas.models import Persona
+
+
 def welcome(request):
-    return HttpResponse('Hola mundo desde Django')
+    no_personas_var = Persona.objects.count()
+    personas = Persona.objects.all()
+    return render(request, 'welcome.html',{'no_personas': no_personas_var, 'list_personas': personas})
 
-def goodbye(request):
-    return HttpResponse('Despedida desde Django')
-
-def contact(request):
-    return HttpResponse('Contacto: 61234578 <br> antonio@email.es')
