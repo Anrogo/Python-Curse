@@ -1,6 +1,6 @@
-from django.forms import ModelForm, EmailInput
+from django.forms import ModelForm, EmailInput, TextInput
 
-from personas.models import Persona
+from personas.models import Persona, Domicilio
 
 
 class PersonaForm(ModelForm):
@@ -10,3 +10,12 @@ class PersonaForm(ModelForm):
         widgets = {
             'email': EmailInput(attrs={'type': 'email'})
         }
+
+class DomicilioForm(ModelForm):
+    class Meta:
+        model = Domicilio
+        fields = '__all__'
+        widgets = {
+            'email': TextInput(attrs={'type': 'number'})
+        }
+

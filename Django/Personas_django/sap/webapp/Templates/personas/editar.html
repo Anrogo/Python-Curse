@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nueva Persona</title>
+    <title>Editar Persona</title>
 </head>
 <body>
-    <h1>Agregar una nueva persona</h1>
+    <h1>Editar Persona</h1>
     <form method="POST">
         <table>
             {{formaPersona}}
         </table>
-        <button type="submit">Enviar</button>
+        <button type="submit">Guardar</button>
         {% csrf_token %}
     </form>
 </body>
