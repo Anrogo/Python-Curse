@@ -1,0 +1,9 @@
+"id","nombre","apellido","email","domicilio_id"
+1,"Antonio","Rodriguez","antonio@mail.com",2
+3,"Karen","Sanchez","ksanchez@mail.es",5
+4,"Carlos","Lara","clara@email.com",1
+5,"Maria","Del olmo","mdelolmo@email.com",2
+7,"Pepito","Grillo","pgrillo@email.es",4
+12,"Aaaa","aaaaa","aaaaa",1
+43,"Larisa","Torres","ltorres@email",5
+46,"Prueba","Pruebaa","prueba@prueba.com",1
